@@ -1,0 +1,4 @@
+This app is gives the user a list of cocktails from an api. When clicked a modal appears giving instructions, glass type, and ingredients along with the ability to close the modal and favorite the cocktail. 
+When a cocktail is favorited it is copied over to the favorites tab.
+
+When loading the app in snack it will have you add multiple dependencies. other than that everything works correctly
