@@ -11,7 +11,7 @@ import styles from './styles';
 import { fetchCocktails } from './api';
 import ConfirmationModal from './ConfirmationModal';
 
-export default function Cocktails() {
+export default function Cocktails({ favorites, setFavorites }) {
   const [cocktails, setCocktails] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedCocktail, setSelectedCocktail] = useState({});
@@ -28,6 +28,11 @@ export default function Cocktails() {
   const handleItemPress = (cocktail) => {
     setSelectedCocktail(cocktail);
     setModalVisible(true);
+  };
+
+  const handleFavorite = (cocktail) => {
+    setFavorites([...favorites, cocktail]);
+    setModalVisible(false);
   };
 
   return (
@@ -49,6 +54,7 @@ export default function Cocktails() {
         cocktail={selectedCocktail}
         onPressConfirm={() => setModalVisible(false)}
         onPressCancel={() => setModalVisible(false)}
+        onFavorite={handleFavorite}
       />
     </View>
   );
