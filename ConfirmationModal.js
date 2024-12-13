@@ -3,7 +3,7 @@ import { View, Text, Modal, Button } from "react-native";
 import styles from "./styles";
 
 export default function ConfirmationModal(props) {
-  const { visible, cocktail, onPressConfirm, onPressCancel } = props;
+  const { visible, cocktail, onPressConfirm, onPressCancel, onFavorite } = props;
 
   return (
     <Modal
@@ -30,6 +30,7 @@ export default function ConfirmationModal(props) {
             );
           })}
           <Button title="Close" onPress={onPressCancel} />
+          <Button title="Favorite" onPress={() => onFavorite(cocktail)} />
         </View>
       </View>
     </Modal>
